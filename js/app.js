@@ -7,6 +7,5 @@ function add_to_shopping_list() {
   todaysList.addItem(new_shopping_list_item);
   let listContent = todaysList.render();
   content.innerHTML = listContent
-  
 }
 

@@ -62,6 +62,7 @@ describe('.render', function () {
   <li class="completed_false">
     <span>milk</span>
     <span>comes from cows</span>
+<input type='checkbox' onchange='changeCheckedStatus(idx, checkbox)'>
   </li>
 </ul>`);
   });
@@ -110,7 +111,7 @@ describe('.removeItem', function () {
     todaysList.removeItem(bread);
     todaysList.items.should.not.include('bread');
   });
-  it('should remove the last item in items if called with no parameters',function(){
+  it('should remove the last item in items if called with no parameters', function () {
     var todaysList = new ShoppingList();
     var bread = new ShoppingListItem('bread', 'used to make sandwiches');
     var eggs = new ShoppingListItem('eggs', 'sunny-side up');
@@ -132,20 +133,23 @@ describe('.render', function () {
     todaysList.addItem(bread);
     todaysList.addItem(eggs);
     todaysList.addItem(milk);
-    expect(todaysList.render()).to.equal(`<ul><ul>
-  <li class="completed_false">
-    <span>bread</span>
-    <span>used to make sandwiches</span>
+    expect(todaysList.render()).to.equal(`<ul>< ul >
+      <li class="completed_false">
+        <span>bread</span>
+        <span>used to make sandwiches</span>
+        <input type='checkbox' onchange='changeCheckedStatus(idx, checkbox)'>
   </li>
-</ul><ul>
-  <li class="completed_false">
-    <span>eggs</span>
-    <span>sunny-side up</span>
+</ul>< ul >
+      <li class="completed_false">
+        <span>eggs</span>
+        <span>sunny-side up</span>
+        <input type='checkbox' onchange='changeCheckedStatus(idx, checkbox)'>
   </li>
-</ul><ul>
-  <li class="completed_false">
-    <span>milk</span>
-    <span>comes from cows</span>
+</ul>< ul >
+      <li class="completed_false">
+        <span>milk</span>
+        <span>comes from cows</span>
+        <input type='checkbox' onchange='changeCheckedStatus(idx, checkbox)'>
   </li>
 </ul></ul>`);
   })

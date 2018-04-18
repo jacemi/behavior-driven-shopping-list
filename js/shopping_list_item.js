@@ -11,19 +11,20 @@ class ShoppingListItem {
     this.is_done = false;
   }
 
-  check(){
+  check() {
     this.is_done = true;
   }
 
-  uncheck(){
+  uncheck() {
     this.is_done = false;
   }
 
-  render(){
+  render() {
     return `<ul>
   <li class="completed_${this.is_done}">
     <span>${this.name}</span>
     <span>${this.description}</span>
+<input type='checkbox' onchange='changeCheckedStatus(idx, checkbox)'>
   </li>
 </ul>`
   }
