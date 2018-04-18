@@ -100,10 +100,14 @@ describe('.addItem', function () {
 });
 
 describe('.removeItem', function () {
-  var todaysList = new ShoppingList();
+  it('should be a function', function () {
+    var todaysList = new ShoppingList();
+    expect(todaysList.removeItem).to.be.a('function')
+  });
   it('should remove an object from items', function () {
+    var todaysList = new ShoppingList();
     var bread = new ShoppingListItem('bread', 'used to make sandwiches');
     todaysList.removeItem(bread);
     todaysList.items.should.not.include('bread');
-  })
-})
+  });
+});
