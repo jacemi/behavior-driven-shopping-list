@@ -66,3 +66,9 @@ describe('.render', function () {
 <ul>`);
   });
 });
+
+describe('ShoppingList', function(){
+  it('should be a class', function(){
+    ShoppingList.should.be.a('function');
+  })
+})
