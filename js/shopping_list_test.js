@@ -67,13 +67,29 @@ describe('.render', function () {
   });
 });
 
-describe('ShoppingList', function(){
-  it('should be a class', function(){
+describe('ShoppingList', function () {
+  it('should be a class', function () {
     ShoppingList.should.be.a('function');
   });
   it('should have a property named items', function () {
     var todaysList = new ShoppingList();
-    expect('todaysList').to.have.property('items');
+    expect(todaysList).to.have.property('items');
   });
+  it('should have a constructor method that initializes items as an empty Array', function () {
+    var todaysList = new ShoppingList();
+    expect(todaysList.items).to.deep.equal([]);
+  })
 });
 
+describe('.addItem', function(){
+  it('should be a function', function(){
+    var todaysList = new ShoppingList();
+    expect(todaysList.addItem).to.be.a('function')
+  });
+  it('should add an object to items', function(){
+    var todaysList = new ShoppingList();
+    var eggs = new ShoppingListItem('eggs', 'sunny-side up');
+    todaysList.addItem(eggs);
+    expect(todaysList.items).to.deep.equal([eggs]);
+  });
+});
