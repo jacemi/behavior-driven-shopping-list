@@ -92,4 +92,9 @@ describe('.addItem', function(){
     todaysList.addItem(eggs);
     expect(todaysList.items).to.deep.equal([eggs]);
   });
+  it('should only accept instances of ShoppingListItem', function () {
+    var todaysList = new ShoppingList();
+    var stuff = "stuff";
+    expect(todaysList.addItem(stuff)).to.be.an('error');
+  });
 });
