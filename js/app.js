@@ -1,6 +1,6 @@
 let todaysList = new ShoppingList();
 let listContent = todaysList.render();
-content.innerHTML = listContent; 
+content.innerHTML = listContent;
 
 function add_to_shopping_list() {
   let new_shopping_list_item = new ShoppingListItem(title.value, description.value);
@@ -11,10 +11,17 @@ function add_to_shopping_list() {
 
 function changeCheckedStatus(idx, event) {
   // console.log(event.target.checked)
-  if(event.target.checked == true){
+  if (event.target.checked == true) {
     todaysList.items[idx].check();
-  }if(event.target.checked == false){
+  }
+  if (event.target.checked == false) {
     todaysList.items[idx].uncheck();
   };
   console.log(todaysList.items[idx].is_done);
 };
+
+function removeItemButtonClicked(idx) {
+  todaysList.removeItem(todaysList.items[idx]);
+  let listContent = todaysList.render();
+  content.innerHTML = listContent;
+}
