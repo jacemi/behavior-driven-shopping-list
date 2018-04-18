@@ -21,7 +21,7 @@ class ShoppingList {
   render(){
     let result = '';
     for(let i = 0; i < this.items.length; i++){
-      result += this.items[i].render();
+      result += this.items[i].render(i);
     };
     console.log(result);
     return `<ul>${result}</ul>`
