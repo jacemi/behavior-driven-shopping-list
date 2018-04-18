@@ -70,5 +70,10 @@ describe('.render', function () {
 describe('ShoppingList', function(){
   it('should be a class', function(){
     ShoppingList.should.be.a('function');
-  })
-})
+  });
+  it('should have a property named items', function () {
+    var todaysList = new ShoppingList();
+    expect('todaysList').to.have.property('items');
+  });
+});
+
