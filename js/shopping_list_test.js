@@ -119,6 +119,12 @@ describe('.removeItem', function () {
     todaysList.addItem(eggs);
     todaysList.addItem(milk);
     todaysList.removeItem();
-    expect(todaysList.items).to.deep.equal([bread,eggs]);
-  })
+    expect(todaysList.items).to.deep.equal([bread, eggs]);
+  });
 });
+
+describe('.render', function () {
+  it('should concatenate the result of calling render on each item in this object and returning an html formatted string', function () {
+    var todaysList = new ShoppingList();
+  })
+})
