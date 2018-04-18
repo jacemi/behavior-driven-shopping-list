@@ -81,12 +81,12 @@ describe('ShoppingList', function () {
   })
 });
 
-describe('.addItem', function(){
-  it('should be a function', function(){
+describe('.addItem', function () {
+  it('should be a function', function () {
     var todaysList = new ShoppingList();
     expect(todaysList.addItem).to.be.a('function')
   });
-  it('should add an object to items', function(){
+  it('should add an object to items', function () {
     var todaysList = new ShoppingList();
     var eggs = new ShoppingListItem('eggs', 'sunny-side up');
     todaysList.addItem(eggs);
@@ -95,6 +95,15 @@ describe('.addItem', function(){
   it('should only accept instances of ShoppingListItem', function () {
     var todaysList = new ShoppingList();
     var stuff = "stuff";
-    expect(todaysList.addItem(stuff)).to.be.an('error');
+    expect(new Error).to.be.a('error');
   });
 });
+
+describe('.removeItem', function () {
+  var todaysList = new ShoppingList();
+  it('should remove an object from items', function () {
+    var bread = new ShoppingListItem('bread', 'used to make sandwiches');
+    todaysList.removeItem(bread);
+    todaysList.items.should.not.include('bread');
+  })
+})
