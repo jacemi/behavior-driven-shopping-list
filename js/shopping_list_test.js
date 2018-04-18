@@ -110,4 +110,15 @@ describe('.removeItem', function () {
     todaysList.removeItem(bread);
     todaysList.items.should.not.include('bread');
   });
+  it('should remove the last item in items if called with no parameters',function(){
+    var todaysList = new ShoppingList();
+    var bread = new ShoppingListItem('bread', 'used to make sandwiches');
+    var eggs = new ShoppingListItem('eggs', 'sunny-side up');
+    var milk = new ShoppingListItem('milk', 'comes from cows');
+    todaysList.addItem(bread);
+    todaysList.addItem(eggs);
+    todaysList.addItem(milk);
+    todaysList.removeItem();
+    expect(todaysList.items).to.deep.equal([bread,eggs]);
+  })
 });
