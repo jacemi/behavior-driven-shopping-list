@@ -25,6 +25,6 @@ class ShoppingListItem {
     <span>${this.name}</span>
     <span>${this.description}</span>
   </li>
-<ul>`
+</ul>`
   }
 };

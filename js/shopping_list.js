@@ -19,10 +19,11 @@ class ShoppingList {
     }
   };
   render(){
-    if(i = 0; i < this.items.length; i++){
-      let result = '';
+    let result = '';
+    for(let i = 0; i < this.items.length; i++){
       result += this.items[i].render();
-      return `<ul>${result}</ul>`
     };
+    console.log(result);
+    return `<ul>${result}</ul>`
   };
 };

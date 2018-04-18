@@ -63,7 +63,7 @@ describe('.render', function () {
     <span>milk</span>
     <span>comes from cows</span>
   </li>
-<ul>`);
+</ul>`);
   });
 });
 
@@ -126,5 +126,27 @@ describe('.removeItem', function () {
 describe('.render', function () {
   it('should concatenate the result of calling render on each item in this object and returning an html formatted string', function () {
     var todaysList = new ShoppingList();
+    var bread = new ShoppingListItem('bread', 'used to make sandwiches');
+    var eggs = new ShoppingListItem('eggs', 'sunny-side up');
+    var milk = new ShoppingListItem('milk', 'comes from cows');
+    todaysList.addItem(bread);
+    todaysList.addItem(eggs);
+    todaysList.addItem(milk);
+    expect(todaysList.render()).to.equal(`<ul><ul>
+  <li class="completed_false">
+    <span>bread</span>
+    <span>used to make sandwiches</span>
+  </li>
+</ul><ul>
+  <li class="completed_false">
+    <span>eggs</span>
+    <span>sunny-side up</span>
+  </li>
+</ul><ul>
+  <li class="completed_false">
+    <span>milk</span>
+    <span>comes from cows</span>
+  </li>
+</ul></ul>`);
   })
 })
